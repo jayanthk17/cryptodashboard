@@ -1,0 +1,214 @@
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+
+    <title> ETH-Yearly-Graph </title>
+
+
+
+    <!-- Bootstrap core CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- Custome CSS -->
+    <link rel="stylesheet" href="../css/style.css">
+
+    <!-- jquery -->
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"> </script>
+
+    <!-- D3- Version 4 -->
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+
+    <!-- Used for formatting time into written month/year format -->
+
+    <script src="https://d3js.org/d3-time-format.v2.min.js"></script>
+
+    <!-- print_filter -->
+    <script type="text/javascript" src="../js/test_filters.js"></script>
+
+    <!-- Fontawesome core CSS -->
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+
+</head>
+
+<body>
+
+    <!--Navbar -->
+
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="../index.html">
+            <img src="../img/crptw.png" height="30" width="30" class="d-inline-block align-top" alt="">Crypto Dashboard </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-333" aria-controls="navbarSupportedContent-333" aria-expanded="false" aria-label="Toggle navigation">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-333">
+          <ul class="navbar-nav ml-auto nav-flex-icons">
+
+              <li class="nav-item active">
+
+                <a class="nav-link waves-effect waves-light" href="../index.html"> <i class="fas fa-home icon-nav"></i> Home <span class="sr-only"> (current) </a>
+ 
+              </li>
+
+              <li class="nav-item active">
+
+                <a class="nav-link waves-effect waves-light" href="../table.html"> <i class="fas fa-table icon-nav"></i> Table <span class="sr-only"> (current) </a>
+
+              </li>
+
+              
+               <li class="nav-item active">
+
+                <a class="nav-link waves-effect waves-light" href="../all-coin-analysis.html"> <i class="fas fa-chart-line icon-nav"></i> All-Coins-Analysis <span class="sr-only"> (current) </a>
+
+              </li>
+
+               <li class="nav-item active">
+                <a class="nav-link waves-effect waves-light" href="../news.html"> <i class="fas fa-newspaper icon-nav"></i> News <span class="sr-only"> (current) </a>
+              </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Nav end -->
+
+    <!-- last update -->
+
+
+    <div class="container">
+        <div class="row">
+            <div id="lastUpdated" class="col-sm-12 col-md-12 text-center text-danger"> </div>
+        </div> <!-- row  -->
+    </div>
+    <!--container  -->
+
+    <!-- last update end -->
+
+    <br>
+
+<div class="container" style="">
+        <div class="table-responsive">
+
+        <table class="table table-bordered table-striped table-hover table-sm">
+          <thead class="thead-dark text-center">
+            <tr>
+              <th scope="col">Coin</th>
+              <th scope="col">Current Value</th>
+              <th scope="col">Today's Highest</th>
+              <th scope="col">Today's Lowest</th>
+              <th scope="col"> % Change</th>
+              <th scope="col">Market Cap</th>
+
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr>
+              <th scope="row"><img src="../img/eth.png" height="30" width="30" class="" alt=""></th>
+              <td>
+                <div id="eth" class="">
+                    <div id="ethTicker">
+                        <span id="ethArrow"></span>
+                            $<span id="ethLast"></span>
+                    </div>
+                </div>
+              </td>
+
+              <td>
+                <div id="eth" class="">
+                    $ <span id="ethHigh"> </span>
+                 </div>
+              </td>
+              <td>
+                <div id="eth" class="">
+                    $ <span id="ethLow"> </span>
+                 </div>
+              </td>
+              <td>
+                <div id="eth" class="">
+                    <span id="ethPct"> </span> % 
+                </div>
+              </td>
+              <td>
+                <div id="eth" class="">
+                    $ <span id="ethMkc"> </span>
+                 </div>
+              </td>
+
+            </tr>
+          </tbody>
+        </table>
+    </div> <!-- resposive  -->
+</div> <!-- container  -->
+
+<!-- Line Chart-->
+    <div id="container" class="container">
+
+        <div class="row">
+            
+                <div id="" class="col-md-12"> 
+                    <h6 class="text-center"> One Year Ethereum Prices in U.S. Dollars </h6>
+                    <div id="chart-area" class=""> </div>
+                </div>
+        </div>
+    </div>
+<!--Line Chart end -->
+
+         <!-- FOOTER -->
+<br>
+
+    <footer id="main-footer" class="text-center p-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+
+                    <a href="#"> <i class="fab fa-facebook-square fa-2x"> </i> </a>
+                    <a href="#"> <i class="fab fa-youtube fa-2x"> </i> </a>
+                    <a href="#"> <i class="fab fa-twitter-square fa-2x"></i> </a>
+                    <a href="#"> <i class="fab fa-linkedin fa-2x"></i> </a>
+
+                    <p> &copy;
+                        <span id="year"></span> Raj-Crypto_Currency_Dashboard </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- FOOTER End-->
+
+
+
+    <!-- Bootstrap core JavaScript -->
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <script>
+        // Get the current year for the copyright
+        $('#year').text(new Date().getFullYear());
+    </script>
+
+    <!-- <script src="js/main.js"> </script> -->
+
+    <script src="../js/yearly-graph/eth-one-year-chart.js"> </script>
+
+
+
+
+</body>
+
+</html>
